@@ -11,6 +11,7 @@ export class MoviesComponent implements OnInit{
   title: string = "Les babouins";
   movies: string[] | undefined;
   imgUrl= "https://picsum.photos/400/200"
+  cols:number = 2;
 
 
   constructor(service: MoviesService){ // singleton est une classe qu'on instencie une seule fois 

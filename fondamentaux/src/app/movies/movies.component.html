@@ -5,4 +5,13 @@
     <li *ngFor="let movie of movies">{{movie}}</li>
 </ul>
 
-<img src="{{imgUrl}} " alt="picsum">
+<!-- <img src="{{imgUrl}} " alt="picsum"> -->
+<img [src]= "imgUrl" alt="picsum">
+<table>
+    <tr>
+        <td [attr.colspan]=cols></td>
+    </tr>
+</table>
+
+<h3 class="bg-red-500 text-2xl">PETITE BITEEE !</h3>
+<button class="btn btn-primary">Clique moi</button>    
