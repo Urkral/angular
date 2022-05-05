@@ -7,6 +7,7 @@
 
 <!-- <img src="{{imgUrl}} " alt="picsum"> -->
 <img [src]= "imgUrl" alt="picsum">
+<!-- (proporty binding) NB: le imgUrl se situe dans le movies.components.ts -->
 <table>
     <tr>
         <td [attr.colspan]=cols></td>
@@ -15,3 +16,48 @@
 
 <h3 class="bg-red-500 text-2xl">PETITE BITEEE !</h3>
 <button class="btn btn-primary">Clique moi</button>    
+
+<button class="btn btn-primary ml-6" [style.backgroundColor]="isActive ? 'red' : 'green'">Save</button>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                              Event binding                              -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<button (click) = "onSave()" class="btn btn-primary ml-6">SAUVER EN CANADIEN</button>
+<!-- onSave() definit dans le .ts -->
+
+<button (click) = "onSave2($event)" class="btn btn-primary ml-6"> Saucez Willy</button>
+<!-- Le $event est renvoyé dans le movies.components.ts où il est utilisé (le$ étant une convention avant l'event) -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 Bubling                                 -->
+<!-- "----------------------------------------------------------------------- -->
+
+<div (click)="onDivClicked()">
+<button (click)="onSave3($event)" class="btn btn-primary mt-6">Un nain potant</button>
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                             Event filtering                             -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- <input class="border" (keyup)="onKeyUp($event)"/> ==> car c'est une méthode de papy-->
+
+<input class="border" (keyup.enter)="onKeyUp()"/>
+<!-- Pas besoin d'event, car on ne doit rien vérifier dans ce cas ci -->
+
+
+<input class="border" (keyup.enter)="onKeyUp2($event)"/>
+
+<input #email class="border" (keyup.enter)="onKeyUp3(email.value)"/>
+
+<input class="border" [value]="monEmail" (keyup.enter)="onKeyUp4()">
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                             Two way binding                             -->
+<!-- ----------------------------------------------------------------------- -->
+
+<input [(ngModel)]="tonEmail" (keyup.enter) = "onKeyUp5()" class="border">
+<span>L'email de ce sagouin est {{tonEmail}}</span>
