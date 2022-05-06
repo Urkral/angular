@@ -1,6 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { registerLocaleData } from '@angular/common';
+import localFr from '@angular/common/locales/fr';
+
+registerLocaleData(localFr, 'fr')
+
 
 @Component({
   selector: 'movies',
@@ -75,7 +80,14 @@ export class MoviesComponent implements OnInit{
       console.log(this.tonEmail);
     }
       faCoffee = faCoffee;
-    
-    
+
+      course = {
+        title : 'Les pipes pour les nulles',
+        rating: 9.5565,
+        student : '3580',
+        price: 199.99,
+        releaseDate: new Date(2020, 1, 1)
+      }
+      text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ad autem, deleniti perferendis incidunt id expedita harum quae. Commodi exercitationem tempore voluptate culpa accusamus laudantium temporibus alias voluptas numquam expedita.'   
 }
  

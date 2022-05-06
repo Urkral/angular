@@ -61,3 +61,18 @@
 
 <input [(ngModel)]="tonEmail" (keyup.enter) = "onKeyUp5()" class="border">
 <span>L'email de ce sagouin est {{tonEmail}}</span>
+
+<!-- ---------------------------------- = ---------------------------------- -->
+<div>
+    {{course.title | uppercase | lowercase | slice:0:9}} <br>
+    <!-- Le premier : après number est pour savoir si on veut des nombres décimaux et le deuxième pour la mise en forme des chiffres -->
+    {{course.student | number: '' : 'fr'}} <br>
+    {{course.rating | number: '1.2-2' : 'fr'}} <br>
+    <!-- EUR pour dire que c'est en €, symbol-narrow pour mettre €après le nombre et fr pour la mise en forme -->
+    {{course.price | currency:'EUR' : 'symbol-narrow': '' : 'fr'}} <br>
+    {{course.releaseDate | date: 'longDate': '' : 'fr'}} <br>
+    
+</div>
+<div>
+    {{text | summary : 10}}
+</div>
