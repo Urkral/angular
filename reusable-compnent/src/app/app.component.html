@@ -1,0 +1,36 @@
+<!-- ----------------------------------------------------------------------- -->
+<!--                                  input                                  -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- <favorite [isFavorite] = "post.isFave"></favorite> -->
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 Output                                  -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- <favorite [isFavorite] = "post.isFave" (change)="onFavoriteChange()"></favorite> -->
+
+<!-- ---------------------- ng-cotent et ng-container ---------------------- -->
+
+<!-- <favorite [isFavorite] = "post.isFave" (change)="onFavoriteChange($event)"></favorite>
+
+<boostrap-panel>
+    <div class="heading">
+        Heading
+    </div>
+    <div class="body">
+        Body
+    </div>
+</boostrap-panel> -->
+
+
+<boostrap-panel>
+    <ng-container class="heading">
+        Heading
+    </ng-container>
+    <ng-container class="body">
+        Body
+    </ng-container>
+</boostrap-panel>

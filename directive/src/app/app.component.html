@@ -1,0 +1,148 @@
+<!-- ----------------------------------------------------------------------- -->
+<!--                                  ngIf                                   -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<div *ngIf="list.length > 0">Il y a des éléments</div>
+<!-- <div *ngIf="list.length == 0">  Il n'y a pas d'éléments</div> -->
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                               ngTemplate                                -->
+<!-- ----------------------------------------------------------------------- -->
+ 
+
+<div class="lesson-list" *ngIf="lesson; else loading">Bijour</div>
+<!-- ; facultatif après la condition -->
+<ng-template #loading>
+  <div>
+    Loading...
+  </div>
+</ng-template>
+
+<div *ngIf="list.length > 0 then yesList else noList" >Lagwe</div>
+<!-- Balise généralement vide car le contenu ne sera jamais affiché -->
+
+<ng-template #yesList>
+  <div>
+    Il y a des éléments
+  </div>
+</ng-template>
+
+<ng-template #noList>
+  <div>
+    Il n'y a pas d'éléments
+  </div>
+</ng-template>
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                              ngSwitchCase                               -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a href="#" [class.active]="viewMode == 'map'" class="nav-link" (click) = "viewMode='map'"> Map View</a>
+  </li>
+  <li class="nav-item">
+    <a href="#" [class.active]="viewMode == 'list'" class="nav-link" (click) = "viewMode='list'"> List View</a>
+  </li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+<div *ngSwitchCase="'map'">Map view content</div>
+<div *ngSwitchCase="'list'">List view content</div>
+<div *ngSwitchDefault>Other content</div>
+</div>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                  ngFor                                  -->
+<!-- ----------------------------------------------------------------------- -->
+
+<ul>
+  <li *ngFor="let course of courses">{{course.name}} </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let course of courses; index as i">{{i}}-{{course.name}}</li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of courses; even as isEven"> {{course.name}} <span *ngIf="isEven">*</span></li>
+  <!-- even as isEven pour venir chercher les élements avec un index pair -->
+</ul>
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                               buttonEvent                               -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<button class="btn-primary btn" (click)="onAdd()">Add</button>
+<ul>
+  <li *ngFor="let course of courses;index as i">{{course.name}} {{i+1}} </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let course of courses; index as i">{{course.name}} {{i+1}} <button class="btn-secondary btn" (click)="onRemove(course)">Delete</button></li>
+</ul>
+
+<ul>
+  <li *ngFor="let course of courses">{{course.name}} <button (click)="onChange(course)">CHANGER</button></li>
+</ul>
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 ngClass                                 -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- <fa-icon [icon]="isSelected ? sStar: rStar" (click)="onClick()"></fa-icon>
+
+<span class="toto" [class.active]="isSelected" [class.inactive]="!isSelected" (click)="onClick()">
+  Lagwe
+</span> -->
+
+
+
+<fa-icon [icon]="isSelected ? sStar: rStar" (click)="onClick()"></fa-icon>
+
+<span class="toto" [ngClass]="{
+  'active':isSelected,
+  'inactive':!isSelected
+}"
+  (click)="onClick()"
+  >
+
+  Lagwe
+</span>
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 ngStyle                                 -->
+<!-- ----------------------------------------------------------------------- -->
+
+
+<!-- 
+<button
+[style.backgroundColor]="canSave ? 'blue' : 'gray'"
+[style.color]="canSave ? 'white' : 'black'"
+[style.fontWeight]="canSave ? 'bold' : 'normal'"
+>
+</button> -->
+
+
+<button
+  [ngStyle]="{
+    'backgroundColor' : canSave ? 'blue':'gray',
+    'color' : canSave ? 'white':'black',
+    'fontWeight' : canSave ? 'white':'black'
+
+
+  }"
+>
+PUT THE BUTTON ON
+</button>
+<exo></exo>

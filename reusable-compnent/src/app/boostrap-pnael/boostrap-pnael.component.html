@@ -1,0 +1,22 @@
+<!-- <div class="card">
+    <div class="card-header">
+        Heading
+    </div>
+    <div class="card-body">
+        Body
+    </div>
+
+</div> -->
+
+<div class="card">
+    <div class="card-header">
+        <ng-content select=".heading">
+
+        </ng-content>
+    </div>
+    <div class="card-body">
+        <ng-content select =".body">
+            
+        </ng-content>
+    </div>
+</div>

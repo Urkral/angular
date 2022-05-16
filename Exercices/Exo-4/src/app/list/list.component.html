@@ -1,0 +1,3 @@
+<ul>
+    <li *ngFor="let tweet of element"><ng-content select=".liste" [isLiked]='tweet.isLiked' [likesCount]="tweet.likesCount"></ng-content> </li>
+</ul>    

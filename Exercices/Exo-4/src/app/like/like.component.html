@@ -1,0 +1,6 @@
+<div>
+    <fa-icon [icon]="isAime? heart : heart2"  size="3x"   (click)="action()" [class.liked]="isAime">
+    </fa-icon> 
+    <p>{{compteur}}</p>
+</div>
+<!--Ou [ngStyle]="{color : isAime ? color : ''}" avec un input-->

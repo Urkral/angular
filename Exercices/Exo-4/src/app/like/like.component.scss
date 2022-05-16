@@ -1,0 +1,14 @@
+div{
+    display: flex;
+}
+p{
+    margin:  5px 2px 5px 15px;
+    font-size: 30px;
+}
+fa-icon{
+    margin-bottom: 15px;
+    cursor: help;
+    &.liked{
+        color: chartreuse;
+    }
+}

@@ -1,0 +1,10 @@
+<!-- <ul>
+  <li *ngFor="let tweet of tweets"><like [isLiked]='tweet.isLiked' [likesCount]="tweet.likesCount"></like></li>
+</ul> -->
+
+<!-- array des tweets -->
+<list [data]="tweets">
+  <ng-container class="liste">
+    <like></like>
+  </ng-container>
+</list>
