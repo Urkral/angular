@@ -1,0 +1,9 @@
+<div class="zippy">
+    <div class="zippy-head"  (click)="toggle()">
+        {{title}}
+        <fa-icon [icon]="isExpand ? cUp : cDo"></fa-icon>
+    </div>
+    <div *ngIf="isExpand" class="zippy-body">
+        <ng-content></ng-content>
+    </div>
+</div>

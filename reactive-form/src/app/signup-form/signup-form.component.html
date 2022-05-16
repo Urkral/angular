@@ -1,0 +1,143 @@
+<!-- <form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form> -->
+
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                               Validation                                -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- 
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+        <div *ngIf="form.get('username')?.touched && form.get('username')?.invalid" class="alert alert-danger">Username is required</div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form> -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                         Validation avec getter                          -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- <form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+
+        <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+            <div *ngIf="username?.errors?.required">Username is required</div>
+            <div *ngIf="username?.errors?.minlength">Username doit avoir au minimun {{username?.errors?.minlength.requiredLength}} caractéres</div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form> -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                            validation custon                            -->
+<!-- ----------------------------------------------------------------------- -->
+<!-- 
+<form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+
+        <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+            <div *ngIf="username?.errors?.required">Username is required</div>
+            <div *ngIf="username?.errors?.minlength">Username doit avoir au minimun {{username?.errors?.minlength.requiredLength}} caractéres</div>
+            <div *ngIf="username?.errors?.cannotContainSpace">Username cannot contain space</div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form> -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                Validation asychrone                                -->
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- <form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+
+        <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+            <div *ngIf="username?.errors?.required">Username is required</div>
+            <div *ngIf="username?.errors?.minlength">Username doit avoir au minimun {{username?.errors?.minlength.requiredLength}} caractéres</div>
+            <div *ngIf="username?.errors?.cannotContainSpace">Username cannot contain space</div>
+            <div *ngIf="username?.errors?.shouldBeUnique">Username is already used</div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form> -->
+
+<!-- ----------------------------------------------------------------------- -->
+<!--                                 Loader                                  -->
+<!-- ----------------------------------------------------------------------- -->
+
+<form [formGroup]="form" (ngSubmit)="login()">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+
+        <div *ngIf="username?.pending">Recherche d'unicité</div>
+        <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+            <div *ngIf="username?.errors?.required">Username is required</div>
+            <div *ngIf="username?.errors?.minlength">Username doit avoir au minimun {{username?.errors?.minlength.requiredLength}} caractéres</div>
+            <div *ngIf="username?.errors?.cannotContainSpace">Username cannot contain space</div>
+            <div *ngIf="username?.errors?.shouldBeUnique">Username is already used</div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form>
+<!-- <form [formGroup]="form">
+    <div class="form-group">
+        <label for="username">Username :</label>
+        <input formControlName="username" type="text" class="form-control" id="username">
+
+        <div *ngIf="username?.touched && username?.invalid" class="alert alert-danger">
+            <div *ngIf="username?.errors?.required">Username is required</div>
+            <div *ngIf="username?.errors?.minlength">Username doit avoir au minimun {{username?.errors?.minlength.requiredLength}} caractéres</div>
+            <div *ngIf="username?.errors?.cannotContainSpace">Username cannot contain space</div>
+            <div *ngIf="username?.errors?.shouldBeUnique">Username is already used</div>
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label for="password">Password :</label>
+        <input formControlName="password" type="text" class="form-control" id="password">
+    </div>
+    <button class="btn btn-secondary" type="submit">Sign up</button>
+</form> -->

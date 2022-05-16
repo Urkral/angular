@@ -3,20 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ExoComponent } from './exo/exo.component';
-import { CorrComponent } from './corr/corr.component';
+import { SignupFormComponent } from './signup-form/signup-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExoComponent,
-    CorrComponent
+    SignupFormComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FontAwesomeModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
